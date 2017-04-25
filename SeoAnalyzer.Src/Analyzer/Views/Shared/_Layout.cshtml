@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/seo-app-custom.css")
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+
+            </div>
+            <div class="float-right">
+                <nav>
+                    <ul id="menu">
+                        <li>
+                            @Html.ActionLink("User Guide", "About", "Home")
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-right">
+                <p>
+                    &copy; @DateTime.Now.Year - My ASP.NET MVC Application Seo Application
+                    <br />
+                    <strong>By: Michaela Ivanova</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/Scripts/custom/analyzer-custom-scripts.js")
+</body>
+</html>

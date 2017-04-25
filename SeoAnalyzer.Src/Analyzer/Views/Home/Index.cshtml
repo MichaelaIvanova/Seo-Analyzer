@@ -1,0 +1,94 @@
+﻿@model Analyzer.Models.WordCounterViewModel
+@{
+    ViewBag.Title = "Word Counter Page";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 id="title"><img src="~/Images/seoorange.png" alt="seo analyzer app" /> Simple Seo Analyzer</h1>
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <p id="app-info">This is a simple Seo Analyzer, choose your option</p>
+            </div>
+            <div class="col-sm-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                <a id="button-text-analyzer" class="btn btn-primary btn-lg pull-right">Analyze Plain text</a>
+            </div>
+            <div class="col-sm-3  col-md-3 col-lg-3">
+                <a id="button-url-analyzer" class="btn btn-primary btn-lg">Analyze Website URL</a>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            @using (Html.BeginForm("CountWords", "WordCounter", FormMethod.Post, new { id = "analyzer-filter-form" }))
+            {
+                <div class="col-sm-12 col-md-12 col-lg-12 hidden" id="text-box-input-container">
+                    <div class="form-group">
+                        <label for="internal-source">Paste your text here (only words at least 3 symbol long will be counted)</label>
+                        @Html.TextAreaFor(model => model.Text, new { @id = "internal-source", @placeholder = "Paste text here", @style = "width:100%; height:300px;" })
+                        <small> Words that are shorter than <strong>3 symbols</strong> or <strong>contain digits/special characters</strong> or exist in <strong>Stop Word list</strong> will be omitted.</small>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 hidden" id="url-input-container">
+                    <div class="form-group" id="external-source-options">
+                        <div class="form-group">
+                            <label for="external-source">Enter an URL address</label>
+                            @Html.TextBoxFor(model => model.ExternlLink, new { @id = "external-source", @placeholder = "Paste URL here", @style = "width:100%; height:auto;" })
+                        </div>
+                        <div class="form-group">
+                            <label>Select optional Analisys</label>
+                            <ul>
+                                <li>
+                                    <label>
+                                        @Html.CheckBoxFor(m => m.CountWordsInMeta)
+                                        Look up keywords in meta tag
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        @Html.CheckBoxFor(m => m.IncludeExternalLinks)
+                                        Get external links list
+                                    </label>
+                                </li>
+                            </ul>
+                            <small> Words that are shorter than <strong>3 symbols</strong> or <strong>contain digits/special characters</strong> or exist in <strong>Stop Word list</strong> will be omitted.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input id="submit-button" type="submit" class="btn btn-primary btn-lg hidden" value="Analyze">
+                </div>
+                <div id="preloader" class="hidden">
+                    <i class="fa fa-cog fa-spin fa-5x fa-fw" aria-hidden="true"></i>
+                     Analyzing ...
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+    <div class="jumbotron" id="analisys-results-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 analyzer-messages">
+                <h2 id="analisys-object-title" class="hidden">Analisys for: <strong><span class="analisys-object"></span></strong></h2>
+                <div id="error-msg" class="alert alert-danger hidden analyzer-messages">
+                </div>
+            </div>
+            <br />
+            <div>
+                <div id="jsGrid-analyzer-results-keywords" class="jsgrid table-results-container"></div>
+            </div>
+            <div>
+                <div id="jsGrid-analyzer-results-keywords-meta" class="jsgrid table-results-container"></div>
+            </div>
+            <div>
+                <div id="jsGrid-analyzer-results-external-links" class="jsgrid table-results-container"></div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4  col-md-offset-4">
+                <input id="analyze-else" type="button" class="btn btn-primary btn-lg hidden" value="Analyze something else">
+            </div>
+        </div>
+    </div>
+</div>

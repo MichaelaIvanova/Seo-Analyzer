@@ -1,0 +1,153 @@
+﻿
+    .sort-panel {
+        padding: 10px;
+        margin: 10px 0;
+        background: #fcfcfc;
+        border: 1px solid #e9e9e9;
+        display: inline-block;
+    }
+
+    .jsgrid-grid-body {
+        min-height: 100px !important;
+    }
+
+    #submit-button {
+        background-color: #337ab7;
+        margin-left: 12px;
+        text-transform: uppercase;
+        min-width: 200px;
+    }
+
+    h1#title, h2, h2 span, #preloader {
+        color: #f7941e;
+    }
+
+    h1#title {
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #f7941e;
+        border-radius: 20px;
+        width: 120%;
+        margin-bottom: 15px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .jumbotron {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    #analyze-else {
+        width: 100%;
+        margin: 0 auto;
+        background-color: #f7941e;
+    }
+
+    .jsgrid-header-sort-asc:before {
+        min-width: 10px;
+        margin-right: 10px;
+        border-width: 0 10px 10px;
+        border-color: transparent transparent #009a67;
+    }
+
+    .jsgrid-header-sort-desc:before {
+        border-width: 10px 10px 0;
+        border-color: #009a67 transparent transparent;
+        margin-right: 10px;
+    }
+
+    .jsgrid-cell.jsgrid-align-right{
+        text-align:left;
+    }
+
+    .green {
+        color: #009a67;
+    }
+
+    img {
+        max-height: 70px;
+        margin-bottom: 5px;
+    }
+
+    h2{
+        padding:10px;
+    }
+
+    body{
+        background-image: url('/Images/seo-background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .jsgrid-pager-container, .jsgrid-pager-container span, .jsgrid-pager-page{
+         color: #f7941e;
+    }
+
+    .jumbotron, footer .content-wrapper , header  .content-wrapper, #body, footer{
+        background-color: transparent;
+    }
+
+    #app-info{
+        color:white;
+        text-shadow:1px 1px 6px black;
+    }
+
+    ul#menu li {
+        background-color: #f7941e;
+        color:white;
+        padding:15px;
+    }
+
+    ul#menu li a{
+        color:white;
+    }
+
+    ul#menu li hr{
+        max-width:50%;
+        color:white;
+        margin:0;
+        padding:0;
+    }
+
+    footer p{
+        color: #f7941e;
+        font-size:1.2em;
+        text-align:left;
+    }
+
+    .form-group, .analyzer-messages h2, .analyzer-messages div, .jsgrid-pager-container{
+        background-color: #fbfaf5;
+    }
+
+        .form-group label {
+            margin-top: 15px;
+        }
+
+#user-guide {
+        background-color: white;
+        padding: 20px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+        #user-guide p {
+            text-align: left;
+        }
+
+        #user-guide h1, #user-guide strong, #user-guide  strong a{
+            color: #f7941e;
+        }
+
+        #user-guide a.btn {
+            color:white
+        }
